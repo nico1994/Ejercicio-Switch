@@ -5,48 +5,82 @@
  */
 package adivinaelnumero;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 /**
  *
- * @author alumno
+ * @author Sofia
  */
 public class AdivinaElNumero {
 
     /**
      * @param args the command line arguments
+     * A) Si le erro por 1 mostrar "Casi Casi"
+     * B) Si le erro por 2 mostrar "Cerca"
+     * C)Si le erro por 3 mostrar "Ni cerca"
+     * D)Si le erro por cuatro puntos mostrar "Bien lejos"
+     * Para todos los demás mostrar "Sos horrible en este juego"
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner misc= new Scanner(System.in);
-        Integer numero;
-        Integer numeroIngresado;
+        Scanner Misc= new Scanner(System.in);
+        //defino variables
         String datoAux;
-        Integer miRandom= (int) (Math.random()*10 )+1;
+        Integer numero;
         
-        System.out.println("numero secreto " +miRandom);
+        //Creo un random de 0 al 10
+        Integer numeroAleatorio = (int) (Math.random()*10) + 1;
+        Integer resultado;  
+        System.out.println("Ingrese un número: ");
+        datoAux= Misc.next();
+        numero= Integer.parseInt(datoAux);
         
-        System.out.println("Ingrese el numero: ");
-        datoAux= misc.next();
-        numeroIngresado= Integer.parseInt(datoAux);
-        
-        if (numeroIngresado== miRandom)
-        {
-            System.out.println("Ganó");}
-        
+        if (numeroAleatorio == numero)
+        { System.out.println("Ganaste");}  
         else 
-        {if (numeroIngresado>miRandom)
-                System.out.println("Te pasaste");
-        else 
+        {if (numeroAleatorio>numero)
                 System.out.println("Te faltó");
+         else
+          
+                 System.out.println("Te pasaste");
+        
+        resultado = (numeroAleatorio - numero);
+        switch (resultado) 
+        {case 1:
+         case -1:
+         {System.out.println("Casi Casi");break;}
+         case 2:
+         case -2:
+         {System.out.println("Cerca");break;}
+         case 3:
+         case -3:
+         {System.out.println("Ni cerca");break;}
+         case 4:
+         case -4:
+         {System.out.println("Bien lejos");break;}
+         default:
+         {System.out.println("Sos horrible en este juego");break;}}
+        System.out.println("el numero es " +numeroAleatorio);
+        }
+   
+    
+    
+    
+    
+    }}  
+        
+        
+        
             
-            }}
-      
-           
-                
+             
         
         
-    }
+        
+        
+        
+        
+        
+    
+
     
 
